@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import styled from 'styled-components';
 import Header from "../../../components/Header";
-import {createPost} from "../../../store/actions/postAction";
 import axios from "axios";
 
 export default function CreatePost() {
@@ -27,18 +25,6 @@ export default function CreatePost() {
         });
     };
 
-
-
-
-    const Card = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 40px;
-    & input, textarea {
-      margin-bottom: 20px;
-    }
-`;
-
     return (
         <>
             <Header/>
@@ -53,3 +39,12 @@ export default function CreatePost() {
         </>
     )
 };
+
+const Card = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    & input, textarea {
+      margin-bottom: 20px;
+    }
+`;

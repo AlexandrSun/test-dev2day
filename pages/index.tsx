@@ -16,18 +16,6 @@ export default function Home() {
         dispatch(getPosts())
     }, []);
 
-    const Main = styled.div`
-          padding: 40px;
-`;
-
-    const PostsList = styled.ul`
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: start;
-          list-style-type: none;
-          padding-left: 0;   
-`;
-
   return (
     <div className="container">
       <Header/>
@@ -35,7 +23,7 @@ export default function Home() {
           <PostsList>
           {loading && posts.map(item => {
               return (
-                  <li>
+                  <li key={item.id}>
                   <Post
                       key={item.id}
                       id={item.id}
@@ -48,3 +36,15 @@ export default function Home() {
     </div>
   )
 }
+
+const Main = styled.div`
+  margin: 20px;
+`;
+
+const PostsList = styled.ul`
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: start;
+          list-style-type: none;
+          padding-left: 0;   
+`;

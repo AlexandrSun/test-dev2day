@@ -17,31 +17,6 @@ export default function PostPage() {
         dispatch(getComments(id))
     }, []);
 
-    const Card = styled.div`
-  margin: 40px;
-`;
-    const CardTitle = styled.h4`
-  font-size: 22px;
-  font-weight: 500;
-  color: #15171A;
-  margin: 0 auto 10px;
-`;
-    const CardText = styled.p`
-  font-size: 16px;
-  font-weight: 400;
-  color: #738A94;
-  margin-bottom: 16px;
-`;
-    const Comments = styled.ul`
-  list-style-type: none;
-  padding-left: 0;   
-`;
-    const Comment = styled.p`
-  font-size: 14px;
-  color: #333333;
-  font-style: italic;
-`;
-
     return (
         <>
             <Header />
@@ -65,3 +40,28 @@ export default function PostPage() {
         </>
     )
 };
+
+const Card = styled.div`
+  margin: 40px;
+`;
+const CardTitle = styled.h4`
+  font-size: 22px;
+  font-weight: 500;
+  color: #15171A;
+  margin: 0 auto 10px;
+`;
+const CardText = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  color: #738A94;
+  margin-bottom: 16px;
+`;
+const Comments = styled.ul`
+  list-style-type: none;
+  padding-left: 0;   
+`;
+const Comment = styled.p`
+  font-size: 14px;
+  color: #333333;
+  font-style: italic;
+`;

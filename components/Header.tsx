@@ -16,7 +16,22 @@ const GlobalStyle = createGlobalStyle`
 
 export default function Header() {
 
-    const MainHead = styled.div`
+    return (
+    <>
+        <GlobalStyle />
+        <MainHead>
+            <Link href="/">
+                <a>Developers2day blog</a>
+            </Link>
+            <Link href="/posts/new">
+                <a>Create new post</a>
+            </Link>
+        </MainHead>
+    </>
+    )
+}
+
+const MainHead = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -32,18 +47,3 @@ export default function Header() {
           text-decoration: none;
         }
 `;
-
-    return (
-    <>
-        <GlobalStyle />
-        <MainHead>
-            <Link href="/">
-                <a>Developers2day blog</a>
-            </Link>
-            <Link href="/posts/new">
-                <a>Create new post</a>
-            </Link>
-        </MainHead>
-    </>
-    )
-}
