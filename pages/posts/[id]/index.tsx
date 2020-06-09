@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from "react-redux";
 import {getComments} from "../../../store/actions/postAction";
 import Header from "../../../components/Header";
+import { IPost } from "../../../store/types";
+import { RootState } from "../../../store/reducers/index";
 
 
 export default function PostPage() {
@@ -11,7 +13,7 @@ export default function PostPage() {
     const id = Number(router.query.id);
 
     const dispatch = useDispatch();
-    const {post} = useSelector(state=>state.post);
+    const post: IPost = useSelector((store: RootState)=>store.post.post);
 
     useEffect(()=>{
         dispatch(getComments(id))

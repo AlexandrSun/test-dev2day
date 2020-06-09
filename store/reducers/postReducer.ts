@@ -1,13 +1,16 @@
 import * as types from '../types';
 
-const initialState = {
+const initialState: types.IStore = {
     posts: [],
-    post: {},
+    post: null,
     loading: false,
     error: null
 };
 
-export const postReducer = (state = initialState, action) => {
+export const postReducer = (
+    state = initialState,
+    action: types.IGetPostsAction | types.IGetCommentAction
+) => {
     switch (action.type) {
         case types.GET_POSTS:
             return {
@@ -20,6 +23,7 @@ export const postReducer = (state = initialState, action) => {
             return {
                 ...state,
                 post: action.payload,
+                error: null
             };
         default:
             return state;
