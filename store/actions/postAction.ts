@@ -9,7 +9,7 @@ export const getPosts = () => async dispatch => {
     });
     dispatch({
         type: types.GET_POSTS,
-        payload: safeRes
+        payload: res.data
     })
 };
 

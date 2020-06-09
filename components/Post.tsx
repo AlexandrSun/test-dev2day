@@ -3,20 +3,19 @@ import styled from 'styled-components';
 import Link from "next/link";
 
 type PropsType = {
-    key: string,
     id: number,
     title: string,
     body: string
 };
 
-const Post: React.FC<PropsType> = ({ id, title, body}) => {
+const Post: React.FC<PropsType> = ({ id, title = "", body = ""}) => {
 
     return (
         <Card>
             <CardTitle>{title}</CardTitle>
             <CardText>{body}</CardText>
             <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>View More</a>
+                <LinkMore>View More</LinkMore>
             </Link>
         </Card>
     )
@@ -40,4 +39,10 @@ const CardText = styled.p`
   font-weight: 400;
   color: #738A94;
   margin-bottom: 16px;
+`;
+const LinkMore = styled.a`
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
 `;

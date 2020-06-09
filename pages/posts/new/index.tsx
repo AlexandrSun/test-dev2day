@@ -19,24 +19,29 @@ export default function CreatePost() {
         const request = { title: title, body: text};
         axios
             .post(`https://simple-blog-api.crew.red/posts`, request)
-            .then(response => {
+            .then(response => { window.location.replace(`/posts/${response.data.id}`)
         });
     };
 
     return (
         <>
             <Header/>
+            <Title>Create new post:</Title>
             <Card>
-                <p>Create new post:</p>
                 <label htmlFor="blog-title">Title: </label>
                 <input type="text" id="blog-title" name="blog-title" placeholder="Title..." value={title} onChange={titleChange}/>
                 <label htmlFor="story">Post text: </label>
-                <textarea id="story" name="story" value={text} onChange={textChange}/>
-                <button type="submit" id="submitPost" onClick={createPostHandler}>Submit</button>
+                <textarea id="story" name="story" rows={10} value={text} onChange={textChange}/>
+                <Button type="submit" id="submitPost" onClick={createPostHandler}>Submit</Button>
             </Card>
         </>
     )
 };
+const Title = styled.h4`
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+`;
 
 const Card = styled.div`
     display: flex;
@@ -45,4 +50,16 @@ const Card = styled.div`
     & input, textarea {
       margin-bottom: 20px;
     }
+`;
+
+const Button = styled.button`
+    width: 140px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #333;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
 `;
