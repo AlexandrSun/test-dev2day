@@ -16,12 +16,10 @@ export default function CreatePost() {
     };
     const createPostHandler = (e) => {
         e.preventDefault();
-        console.log(`Title: ${title} --- Text: ${text}`);
         const request = { title: title, body: text};
         axios
             .post(`https://simple-blog-api.crew.red/posts`, request)
             .then(response => {
-                console.log(response.data);
         });
     };
 

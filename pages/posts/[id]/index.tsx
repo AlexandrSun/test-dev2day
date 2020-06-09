@@ -19,7 +19,7 @@ export default function PostPage() {
 
     return (
         <>
-            <Header />
+            <Header/>
         {post &&
         <Card>
             <CardTitle>{post.title}</CardTitle>

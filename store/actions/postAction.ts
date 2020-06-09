@@ -16,7 +16,6 @@ export const getPosts = () => async dispatch => {
 export const getComments = (id: number) => async dispatch => {
     const res = await axios
         .get(`https://simple-blog-api.crew.red/posts/${id}?_embed=comments`);
-        console.log(res.data);
     dispatch({
         type: types.GET_COMMENT,
         payload: res.data

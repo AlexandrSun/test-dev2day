@@ -10,7 +10,6 @@ export default function Home() {
 
     const dispatch = useDispatch();
     const {posts, loading} = useSelector(state=>state.post);
-    console.log(posts);
 
     useEffect(()=>{
         dispatch(getPosts())
